@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 const HASURA_OPERATION = `
 mutation ($email: String!, $state: String!, $city: String!) {
