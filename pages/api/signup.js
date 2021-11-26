@@ -1,9 +1,3 @@
-// // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-// export default function handler(req, res) {
-//   res.status(200).json({ name: 'John Doe' })
-// }
-
 const fetch = require("node-fetch");
 
 const HASURA_OPERATION = `
@@ -31,8 +25,7 @@ const execute = async (variables) => {
   return data;
 };
 
-// Request Handler
-app.post("/signup", async (req, res) => {
+export default async function handler(req, res) {
   // get request input
   const { email, state, city } = req.body.input;
 
@@ -50,4 +43,4 @@ app.post("/signup", async (req, res) => {
   return res.json({
     ...data.insert_desiree_pre_signup_one,
   });
-});
+}
